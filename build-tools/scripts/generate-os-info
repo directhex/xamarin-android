@@ -29,13 +29,11 @@ function getInfo_Linux()
     local uses_clang=no
     local compiler_version="`cc --version | tr -d '\n'`"
 
-    lsb_release > /dev/null 2>&1 || die "Your Linux does not have a working 'lsb_release' command"
-
     if [ ! -x $CONFIG_GUESS ]; then
         die "Your Linux does not have the '$CONFIG_GUESS' script. Missing the autotools-dev package?"
     fi
-    OS_NAME="`lsb_release -is`"
-    OS_RELEASE="`lsb_release -rs`"
+    OS_NAME="FlatPak"
+    OS_RELEASE="0.6.9"
     HOST_CPUS="`nproc`"
 
     if echo $compiler_version | grep -i "Free Software Foundation" > /dev/null 2>&1; then
