@@ -25,7 +25,7 @@ function getMingwSearchDir_Linux()
 
 function getInfo_Linux()
 {
-    local CONFIG_GUESS=/usr/share/gnu-config/config.guess
+    local CONFIG_GUESS=/usr/share/libtool/build-aux/config.guess
     local uses_clang=no
     local compiler_version="`cc --version | tr -d '\n'`"
 
