@@ -87,7 +87,7 @@ static MonoMethod* registerType;
 #elif ANDROID
 #define SYSTEM_LIB_PATH "/system/lib"
 #elif LINUX
-#define SYSTEM_LIB_PATH "/usr/lib"
+#define SYSTEM_LIB_PATH "/app/lib/mono"
 #elif APPLE_OS_X
 #define SYSTEM_LIB_PATH "/Library/Frameworks/Xamarin.Android.framework/Libraries/"
 #elif WINDOWS
