@@ -2978,6 +2978,8 @@ convert_dl_flags (int flags)
 static void*
 monodroid_dlopen (const char *name, int flags, char **err, void *user_data)
 {
+log_info (LOG_DEFAULT, "monodroid_dlopen used\n");
+
 	/* name is NULL when we're P/Invoking __Internal, so remap to libmonodroid */
 	char *full_name = path_combine (app_libdir, name ? name : "libmonodroid.so");
 	if (!name && !file_exists (full_name)) {
@@ -3030,6 +3032,8 @@ monodroid_dlsym (void *handle, const char *name, char **err, void *user_data)
 {
 	void *s;
 	
+log_info (LOG_DEFAULT, "monodroid_dlsym used\n");
+
 	s = dlsym (handle != NULL ? handle : RTLD_DEFAULT, name);
 
 	if (!s && err) {
