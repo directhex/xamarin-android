@@ -2978,7 +2978,7 @@ convert_dl_flags (int flags)
 static void*
 monodroid_dlopen (const char *name, int flags, char **err, void *user_data)
 {
-log_info (LOG_DEFAULT, "monodroid_dlopen used\n");
+log_info (LOG_DEFAULT, "monodroid_dlopen used. name: %s\n", name ? name : "NULL!");
 
 	/* name is NULL when we're P/Invoking __Internal, so remap to libmonodroid */
 	char *full_name = path_combine (app_libdir, name ? name : "libmonodroid.so");
