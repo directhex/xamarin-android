@@ -3030,7 +3030,7 @@ monodroid_dlsym (void *handle, const char *name, char **err, void *user_data)
 {
 	void *s;
 	
-	s = dlsym (handle, name);
+	s = dlsym (handle != NULL ? handle : RTLD_DEFAULT, name);
 
 	if (!s && err) {
 		*err = monodroid_strdup_printf ("Could not find symbol '%s'.", name);
